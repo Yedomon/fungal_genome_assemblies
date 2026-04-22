@@ -3,16 +3,20 @@
 This repository is organized as follows:
 
 ## 1. Data Collection
-Sources: [NCBI](https://www.ncbi.nlm.nih.gov/) and [JGI MycoCosm](https://mycocosm.jgi.doe.gov/)
-📁 [`data_collection/`](https://github.com/Yedomon/fungal_genome_assemblies/tree/main/data_collection)
+Sources: 
+- [NCBI Datasets](https://www.ncbi.nlm.nih.gov/datasets/genome/) 
+- [JGI MycoCosm](https://mycocosm.jgi.doe.gov/)
+  
+  Code: 📁 [`data_collection/`](https://github.com/Yedomon/fungal_genome_assemblies/tree/main/data_collection)
 
 ## 2. Assembly Stats Calculation
 Assembly statistics for JGI genomes.
-📁 [`assembly_stats/`](https://github.com/Yedomon/fungal_genome_assemblies/tree/main/assembly_stats)
+
+Code: 📁 [`assembly_stats/`](https://github.com/Yedomon/fungal_genome_assemblies/tree/main/assembly_stats)
 
 ## 3. BUSCO Analysis
 BUSCO completeness assessment for all genomes.
-📁 [`busco/`](https://github.com/Yedomon/fungal_genome_assemblies/tree/main/busco)
+Code: 📁 [`busco/`](https://github.com/Yedomon/fungal_genome_assemblies/tree/main/busco)
 
 ## 4. Figures
 R scripts used to generate all manuscript figures.
