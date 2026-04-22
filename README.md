@@ -28,8 +28,6 @@ R scripts used to generate all manuscript figures.
 
 ---
 
-> **Note:** Update folder and file paths in the links above to match the actual structure of your repository.
-
 ## 5. Citation
 
 This repository is linked to the following manuscript:
