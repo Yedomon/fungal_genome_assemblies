@@ -27,6 +27,7 @@ Code: 📁 [`assembly_stats/`](https://github.com/Yedomon/fungal_genome_assembli
 
 ## 3. BUSCO Analysis
 BUSCO completeness assessment for all genomes.
+
 Code: 📁 [`busco/`](https://github.com/Yedomon/fungal_genome_assemblies/tree/main/busco)
 
 ## 4. Figures
