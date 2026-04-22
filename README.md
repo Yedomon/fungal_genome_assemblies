@@ -1,4 +1,15 @@
-# Fungal Genome Assemblies
+<div align="center">
+  
+# The impact of long-read sequencing on fungal genome assemblies: progress and disparity
+
+</div>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/GitHub-Repo-blue?logo=github" />
+  <img src="https://img.shields.io/badge/Miniconda3-darkgreen?logo=anaconda" />
+  <img src="https://img.shields.io/badge/R-4.2.2-blue?logo=R" />
+  <img src="https://img.shields.io/badge/Zenodo-Repo-blue?logo=zenodo" />
+</p>
 
 This repository is organized as follows:
 
@@ -37,3 +48,6 @@ R scripts used to generate all manuscript figures.
 This repository is linked to the following manuscript:
 
 > Kroll, E., Zoclanclounon, Y.A.B., Urban, M., Hill, R., and Hammond-Kosack, K. (2026). *The impact of long-read sequencing on fungal genome assemblies: progress and disparity.*
+
+If you use these scripts, please cite this work using the following Zenodo link: 
+[![DOI](https://zenodo.org/badge/1059702133.svg)](https://doi.org/10.5281/zenodo.17791003)
