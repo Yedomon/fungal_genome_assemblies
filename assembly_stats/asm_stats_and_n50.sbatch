@@ -37,10 +37,10 @@ echo -e "assembly\tN50" > "$N50_SUMMARY"
 # ─────────────────────────────────────────────────────────────────
 echo ">>> Running assembly-stats on all FASTA files in $DOWNLOAD_DIR"
 
-for fasta in "$DOWNLOAD_DIR"/*.fasta; do
+for fasta in "$DOWNLOAD_DIR"/*.fna; do
 
     # Get base name e.g. Zoorad1_unmasked-assembly
-    base=$(basename "$fasta" .fasta)
+    base=$(basename "$fasta" .fna)
 
     echo "  Processing: $base"
 
