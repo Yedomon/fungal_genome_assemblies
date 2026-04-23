@@ -40,7 +40,7 @@ R scripts used to generate all manuscript figures.
 | Fig. 4 | [`figures/fig4.R`](https://github.com/Yedomon/fungal_genome_assemblies/blob/main/figures/fig4.R) |
 | Fig. 5 | [`figures/fig5.R`](https://github.com/Yedomon/fungal_genome_assemblies/blob/main/figures/fig5.R) |
 | Supplementary Fig. 1 | [`figures/supplementary_fig1.R`](https://github.com/Yedomon/fungal_genome_assemblies/blob/main/figures/supplementary_fig1.R) |
-| Supplementary Fig. 2 | [`figures/supplementary_fig1.R`](https://github.com/Yedomon/fungal_genome_assemblies/blob/main/figures/supplementary_fig2.R) |
+
 ---
 
 ## 5. Citation
