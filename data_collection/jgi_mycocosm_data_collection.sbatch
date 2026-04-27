@@ -14,7 +14,7 @@
 # CONFIGURATION
 # ─────────────────────────────────────────────────────────────────
 WORKDIR="/home/data/fungal_longread_review_rp10796-14/00.data/jgi"
-CATALOG_FILE="$WORKDIR/jgi_fungi_catalog.tsv"   # Your saved catalog file
+CATALOG_FILE="$WORKDIR/jgi_fungi_catalog.tsv"   
 PREFIX_FILE="$WORKDIR/prefix_list.txt"
 DOWNLOAD_DIR="$WORKDIR/assemblies"
 LOG_FILE="$WORKDIR/logs/jgi_download.log"
@@ -48,7 +48,7 @@ if [[ $TOTAL -eq 0 ]]; then
 fi
 
 # ─────────────────────────────────────────────────────────────────
-# STEP 2: DOWNLOAD GENOME ASSEMBLIES IN A POLITE LOOP
+# STEP 2: DOWNLOAD GENOME ASSEMBLIES IN A LOOP
 # ─────────────────────────────────────────────────────────────────
 echo ">>> Starting bulk download from JGI MycoCosm..." | tee -a "$LOG_FILE"
 echo ">>> Will pause ${SLEEP_DURATION}s after every ${SLEEP_COUNT} downloads." | tee -a "$LOG_FILE"
@@ -88,7 +88,7 @@ while IFS= read -r prefix; do
         ERROR_COUNT=$(( ERROR_COUNT + 1 ))
     fi
 
-    # Polite pause every SLEEP_COUNT successful downloads
+    # Pause every SLEEP_COUNT successful downloads
     if [[ $(( DOWNLOAD_COUNT % SLEEP_COUNT )) -eq 0 && $DOWNLOAD_COUNT -gt 0 ]]; then
         echo "--- Pause: $DOWNLOAD_COUNT downloads completed. Sleeping ${SLEEP_DURATION}s... ---" | tee -a "$LOG_FILE"
         sleep "$SLEEP_DURATION"
