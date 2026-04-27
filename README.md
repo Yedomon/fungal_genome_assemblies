@@ -46,6 +46,9 @@ R scripts used to generate all manuscript figures.
 
 ## 5. Citation
 
-This repository is linked to the following manuscript:
 
-> Kroll, E., Zoclanclounon, Y.A.B., Urban, M., Hill, R., and Hammond-Kosack, K. (2026). *The impact of long-read sequencing on fungal genome assemblies: progress and disparity.*
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19829627.svg)](https://doi.org/10.5281/zenodo.19829627)
+
+If you use these scripts, please cite this work :  
+> Kroll, E., Zoclanclounon, Y. A. B., Urban, M., Hill, R., & Hammond-Kosack, . kim . (2026). The impact of long-read sequencing on fungal genome assemblies: progress and disparity (v0.01). Zenodo. https://doi.org/10.5281/zenodo.19829627 
