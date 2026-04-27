@@ -51,4 +51,4 @@ This repository is linked to the following manuscript:
 > Kroll, E., Zoclanclounon, Y.A.B., Urban, M., Hill, R., and Hammond-Kosack, K. (2026). *The impact of long-read sequencing on fungal genome assemblies: progress and disparity.*
 
 If you use these scripts, please cite this work using the following Zenodo link: 
-[![DOI](https://zenodo.org/badge/1059702133.svg)](https://doi.org/10.5281/zenodo.17791003)
+[![DOI](https://zenodo.org/badge/XXXX.svg)](https://doi.org/XXXzenodo.XXXXX)
