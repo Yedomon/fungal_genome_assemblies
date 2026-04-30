@@ -11,6 +11,7 @@ library(ape)          # v5.8-1
 library(ggnewscale)   # v0.5.2
 library(ggtree)       # v4.0.5
 library(ggtreeExtra)  # v1.20.1
+library(packcircles)  # v0.3.7
 library(patchwork)    # v1.3.2
 library(scales)       # v1.4.0
 library(tgutil)       # v0.1.20
@@ -524,7 +525,7 @@ gg.tree.3 <- gg.tree.2 +
   ggpreview(width=7, height=7)
 
 # Write to file
-pdf(paste0("fig_5-", Sys.Date(), ".pdf"), width=7, height=7)
+pdf(paste0("fig_5a-", Sys.Date(), ".pdf"), width=7, height=7)
 gg.tree.3
 dev.off()
 
@@ -559,8 +560,101 @@ gg.rank <- ggplot(rank.df, aes(x=rank, y=prop)) +
   ggpreview(width=1.5, height=1.5)
 
 # Write to file
-cairo_pdf(paste0("fig_5_inset-", Sys.Date(), ".pdf"), width=1.5, height=1.5)
+cairo_pdf(paste0("fig_5b-", Sys.Date(), ".pdf"), width=1.5, height=1.5)
 gg.rank
+dev.off()
+
+# ── Plot genus bubble plot ────────────────────────────────────────────────────
+
+# Calculate total number of genera per phylum
+tmp <- tax.2 %>%
+  group_by(Current_phylum) %>%
+  summarise(num.gen=n_distinct(Current_genus))
+
+# Calculate number of genera with a genome assembly
+df.gen <- df.3 %>%
+  filter(Genus != "") %>%
+  group_by(Current_phylum) %>%
+  summarise(num.gen.seq=n_distinct(Genus)) %>%
+  # Combine with total number of genera
+  left_join(tmp) %>%
+  mutate(perc=round(num.gen.seq/num.gen*100), # calculate percentage
+         # add colours for phyla
+         colour=c("#0072b2", "#c8cdda", "#de6765", "#bf987c", "#f8e6d6",
+                  "#f4f1b3", "#755cc5ff", "#ba7bb4", "#5699d1", "#da57a1ff",
+                  "#4abcbd", "#ebc74f", "#878365", "#cc9f28", "#60b345",
+                  "#eda4a6", "#006779", "#657719", "#a0ca78", "#f59943"))
+
+# Get radius and x and y coordinates for centre of larger circles
+circle.layout <- circleProgressiveLayout(df.gen$num.gen,
+                                         sizetype="area")
+
+# Add a small gap between circles
+circle.layout$radius <- circle.layout$radius * 0.95
+
+# Create a dataframe of vertices to draw each 'circle'
+circle.vertices <- circleLayoutVertices(circle.layout, npoints=50)
+
+# Get radius and x and y coordinates for centre of nested circles
+circle.layout.pub <- 
+  circleProgressiveLayout(df.gen$num.gen.seq,
+                          sizetype="area")
+
+# Again add small gap between circles
+circle.layout.pub$radius <- circle.layout.pub$radius * 0.95
+
+# Replace x and y with that of the larger circles, but keep the same radius
+circle.layout.pub <- data.frame(x=circle.layout$x,
+                                y=circle.layout$y,
+                                radius=circle.layout.pub$radius)
+
+# Create a dataframe of vertices to draw each nested 'circle'
+circle.vertices.pub <- circleLayoutVertices(circle.layout.pub,
+                                            npoints=50)
+
+# Combine original dataframe with the layout dataframe
+circle.labels <- cbind(df.gen, circle.layout)
+
+#Plot bubble plot
+gg.circles.nested <- ggplot() +
+  # Add circles for total genera
+  geom_polygon(data=circle.vertices,
+               aes(x, y, group=id, fill=as.factor(id)),
+               colour=NA,
+               alpha=0.3) +
+  # Add circles for genomes
+  geom_polygon(data=circle.vertices.pub,
+               aes(x, y, group=id, fill=as.factor(id)),
+               colour=NA) +
+  # Phylum name slightly above center
+  geom_text(data=circle.labels,
+            aes(x, y + 1.5, size=num.gen.seq, label=Current_phylum),
+            fontface="bold",
+            show.legend=FALSE) +
+  # Percentage slightly below center
+  geom_text(data=circle.labels,
+            aes(x, y - 1.5, size=num.gen.seq, label=paste0(perc, "%")),
+            fontface="bold",
+            show.legend=FALSE) +
+  scale_size_continuous(range=c(1.5, 3.5)) +
+  scale_fill_manual(values=circle.labels$colour,
+                    labels=circle.labels$Current_phylum) +
+  guides(fill=guide_legend(
+    nrow=3,
+    direction="horizontal",
+    title=NULL,
+    label.theme=element_text(size=7, margin=margin(l=-3)),
+    keywidth=unit(7, "pt"),
+    keyheight=unit(7, "pt"))
+  ) +
+  coord_equal() +
+  theme_void() + 
+  theme(legend.position="none") +
+  ggpreview(width=10, height=8, unit="in")
+
+# Write to file
+pdf(paste0("fig_5c-", Sys.Date(), ".pdf"), width=10, height=8)
+gg.circles.nested
 dev.off()
 
 # ──────────────────────────────────────────────────────────────────────────────
