@@ -41,8 +41,8 @@ Both R and python scripts were used to generate all manuscript figures.
 | Fig. 5 | [`figures/fig5.R`](https://github.com/Yedomon/fungal_genome_assemblies/blob/main/figures/fig5) |
 | Supplementary Fig. 1 | [`figures/supplementary_fig1.R`](https://github.com/Yedomon/fungal_genome_assemblies/tree/main/figures/Suppl_fig1) |
 | Supplementary Fig. 2 | [`figures/supplementary_fig2.R`](https://github.com/Yedomon/fungal_genome_assemblies/tree/main/figures/Suppl_fig2) |
-| Supplementary Fig. 3 | [`figures/supplementary_fig1.R`](https://github.com/Yedomon/fungal_genome_assemblies/tree/main/figures/Suppl_fig3) |
-| Supplementary Fig. 4 | [`figures/supplementary_fig2.R`](https://github.com/Yedomon/fungal_genome_assemblies/tree/main/figures/Suppl_fig4) |
+| Supplementary Fig. 3 | [`figures/supplementary_fig3.R`](https://github.com/Yedomon/fungal_genome_assemblies/tree/main/figures/Suppl_fig3) |
+| Supplementary Fig. 4 | [`figures/supplementary_fig4.R`](https://github.com/Yedomon/fungal_genome_assemblies/tree/main/figures/Suppl_fig4) |
 ---
 
 ## 5. Citation
