@@ -525,6 +525,6 @@ gg.tree.3 <- gg.tree.2 +
   ggpreview(width=7, height=7)
 
 # Write to file
-pdf(paste0("fig_5", Sys.Date(), ".pdf"), width=7, height=7)
+pdf(paste0("fig_4", Sys.Date(), ".pdf"), width=7, height=7)
 gg.tree.3
 dev.off()
