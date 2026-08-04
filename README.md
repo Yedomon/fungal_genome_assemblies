@@ -49,7 +49,7 @@ Both R and python scripts were used to generate all manuscript figures.
 
 
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19923620.svg)](https://doi.org/10.5281/zenodo.19923620)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21777221.svg)](https://doi.org/10.5281/zenodo.21777221)
 
 If you use these scripts, please cite this work :  
-> Kroll, E., Zoclanclounon, Y. A. B., Urban, M., Hill, R., & Hammond-Kosack, K. (2026). The impact of long-read sequencing on fungal genome assemblies: progress and disparity (v0.01). Zenodo. https://zenodo.org/records/19923620 
+> Kroll, E., Zoclanclounon, Y. A. B., Urban, M., Hill, R., & Hammond-Kosack, K. (2026). The impact of long-read sequencing on fungal genome assemblies: progress and disparity (v0.01). Zenodo. https://zenodo.org/records/21777221 
